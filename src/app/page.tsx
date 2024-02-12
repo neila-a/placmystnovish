@@ -16,7 +16,8 @@ import {
 import {
     HistoryEdu as HistoryEduIcon,
     Mail as MailIcon,
-    MenuBook as MenuBookIcon
+    MenuBook as MenuBookIcon,
+    Article as ArticleIcon
 } from '@mui/icons-material';
 import Link from "next/link";
 export default function Home() {
@@ -78,7 +79,7 @@ export default function Home() {
                 <Grid container component="section" direction={downsm ? "column": "row"} sx={{
                     justifyContent: "space-between"
                 }}>
-                    {([["orthography", HistoryEduIcon], ["dictionary", MenuBookIcon]] as [string, typeof HistoryEduIcon][]).map(item => {
+                    {([["orthography", HistoryEduIcon], ["dictionary", MenuBookIcon], ["syntax", ArticleIcon]] as [string, typeof HistoryEduIcon][]).map(item => {
                         const Icon = item[1];
                         return (
                             <Grid item key={item[0]} sx={{
@@ -86,7 +87,7 @@ export default function Home() {
                                 display: "flex",
                                 flexDirection: "column",
                                 alignItems: "center",
-                                maxWidth: "calc((100% - 32px) / 2)",
+                                maxWidth: "calc((100% - 32px) / 3)",
                                 textAlign: "center",
                                 ["> *"]: {
                                     m: 0.5

@@ -29,6 +29,7 @@
     },
     "email": "用电子邮件联系我们",
     "syntaxpage": {
+        "description": "确定了用法来运用的词类、词的曲折变化或表示相互关系的其他手段以及词在句中的功能和关系。",
         "adjective": "形容词",
         "suffix": "后缀",
         "toadverb": "转副词",
