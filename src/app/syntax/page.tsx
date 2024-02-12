@@ -17,7 +17,6 @@ import adjectives from "./adjective.json";
 import numbers from "./number.json";
 import nouns from "./noun.json";
 import verbs from "./verb.json";
-import { it } from "node:test";
 export default function Syntax() {
     return (
         <Box sx={{
