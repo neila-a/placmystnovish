@@ -17,6 +17,7 @@ import adjectives from "./adjective.json";
 import numbers from "./number.json";
 import nouns from "./noun.json";
 import verbs from "./verb.json";
+import predicates from "./predicate.json";
 export default function Syntax() {
     return (
         <Box sx={{
@@ -27,7 +28,7 @@ export default function Syntax() {
             }}>
                 {get("syntaxpage.suffix")}
             </Typography>
-            {([["adjective", adjectives], ["number", numbers], ["noun", nouns]] as [string, [string, string][]][]).map(item => <Box component="section" sx={{
+            {([["adjective", adjectives], ["number", numbers], ["noun", nouns], ["predicate", predicates]] as [string, [string, string][]][]).map(item => <Box component="section" sx={{
                 mb: 4
             }} key={item[0]}>
                 <Typography variant="h4" sx={{
