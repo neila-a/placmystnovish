@@ -28,6 +28,11 @@ export default function Syntax() {
             }}>
                 {get("syntaxpage.suffix")}
             </Typography>
+            <Typography variant="subtitle1" sx={{
+                mb: 2
+            }}>
+                {get("syntaxpage.convert")}
+            </Typography>
             {([["adjective", adjectives], ["number", numbers], ["noun", nouns], ["predicate", predicates]] as [string, [string, string][]][]).map(item => <Box component="section" sx={{
                 mb: 4
             }} key={item[0]}>
