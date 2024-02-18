@@ -64,10 +64,15 @@ export default function orthography() {
                 mb: 4
             }} component="section" key={item[0]}>
                 <Typography variant="h4" sx={{
-                    mb: 2
+                    mb: 1
                 }}>
                     {get(`orthographypage.${item[0]}table`)}
                 </Typography>
+                {item[0] === "vowel" && <Typography variant="subtitle1" sx={{
+                    mb: 2
+                }}>
+                    {get("orthographypage.V")}
+                </Typography>}
                 <TableContainer component={Paper}>
                     <Table aria-label={item[0]}>
                         <TableHead>
