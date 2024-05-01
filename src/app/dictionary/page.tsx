@@ -30,8 +30,11 @@ export default function Dictionary() {
                     }}>
                         {get("dictionarypage.loanword.root")}
                     </Typography>
-                    <Typography variant="body1">
-                        {get("dictionarypage.loanword.rootbody")}
+                    <Typography variant="body1" paragraph>
+                        {get("dictionarypage.loanword.rootfrom")}
+                    </Typography>
+                    <Typography variant="body1" paragraph>
+                        {get("dictionarypage.loanword.rootchange")}
                     </Typography>
                 </Box>
                 <Box component="section" sx={{
@@ -47,6 +50,6 @@ export default function Dictionary() {
                     </Typography>
                 </Box>
             </Box>
-        </Box >
+        </Box>
     );
 }

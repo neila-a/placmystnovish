@@ -14,10 +14,9 @@ import {
     get
 } from "react-intl-universal";
 import adjectives from "./adjective.json";
-import numbers from "./number.json";
 import nouns from "./noun.json";
+import numbers from "./number.json";
 import verbs from "./verb.json";
-import predicates from "./predicate.json";
 export default function Syntax() {
     return (
         <Box sx={{
@@ -28,41 +27,43 @@ export default function Syntax() {
             }}>
                 {get("syntaxpage.suffix")}
             </Typography>
-            {([["adjective", adjectives], ["number", numbers], ["predicate", predicates]] as [string, [string, string][]][]).map(item => <Box component="section" sx={{
-                mb: 4
-            }} key={item[0]}>
-                <Typography variant="h4" sx={{
-                    mb: 2
-                }}>
-                    {get(`syntaxpage.${item[0]}`)}
-                </Typography>
-                <TableContainer component={Paper}>
-                    <Table aria-label="noun">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell>{get("syntaxpage.role")}</TableCell>
-                                <TableCell align="right">{get("syntaxpage.suffix")}</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {item[1].map(word => (
-                                <TableRow key={word[0]} sx={{
-                                    '&:last-child td, &:last-child th': {
-                                        border: 0
-                                    }
-                                }}>
-                                    <TableCell component="th" scope="row">
-                                        {get(`syntaxpage.${word[0]}`)}
-                                    </TableCell>
-                                    <TableCell align="right">
-                                        {word[1]}
-                                    </TableCell>
+            {([["number", numbers]] as [string, [string, string][]][]).map(item => (
+                <Box component="section" sx={{
+                    mb: 4
+                }} key={item[0]}>
+                    <Typography variant="h4" sx={{
+                        mb: 2
+                    }}>
+                        {get(`syntaxpage.${item[0]}`)}
+                    </Typography>
+                    <TableContainer component={Paper}>
+                        <Table aria-label={get(`syntaxpage.${item[0]}`)}>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>{get("syntaxpage.role")}</TableCell>
+                                    <TableCell align="right">{get("syntaxpage.suffix")}</TableCell>
                                 </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </Box>)}
+                            </TableHead>
+                            <TableBody>
+                                {item[1].map(word => (
+                                    <TableRow key={word[0]} sx={{
+                                        '&:last-child td, &:last-child th': {
+                                            border: 0
+                                        }
+                                    }}>
+                                        <TableCell component="th" scope="row">
+                                            {get(`syntaxpage.${word[0]}`)}
+                                        </TableCell>
+                                        <TableCell align="right">
+                                            {word[1]}
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </Box>
+            ))}
             <Box component="section" sx={{
                 mb: 4
             }}>
@@ -72,7 +73,7 @@ export default function Syntax() {
                     {get("syntaxpage.verb")}
                 </Typography>
                 <TableContainer component={Paper}>
-                    <Table aria-label="verb">
+                    <Table aria-label={get("syntaxpage.verb")}>
                         <TableHead>
                             <TableRow>
                                 <TableCell>{get("syntaxpage.role")}</TableCell>
@@ -101,7 +102,47 @@ export default function Syntax() {
                         </TableBody>
                     </Table>
                 </TableContainer>
-            </Box><Box component="section" sx={{
+            </Box>
+            <Box component="section" sx={{
+                mb: 4
+            }}>
+                <Typography variant="h4" sx={{
+                    mb: 2
+                }}>
+                    {get("syntaxpage.adjective")}
+                </Typography>
+                <TableContainer component={Paper}>
+                    <Table aria-label={get("syntaxpage.adjective")}>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>{get("syntaxpage.class")}</TableCell>
+                                <TableCell align="right">{get("syntaxpage.adjective")}</TableCell>
+                                <TableCell align="right">{get("syntaxpage.adverb")}</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {(adjectives as [string, string, string][]).map(adjective => (
+                                <TableRow key={adjective[0]} sx={{
+                                    '&:last-child td, &:last-child th': {
+                                        border: 0
+                                    }
+                                }}>
+                                    <TableCell component="th" scope="row">
+                                        {get(`syntaxpage.adjectives.${adjective[0]}`)}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        {adjective[1]}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        {adjective[2]}
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </Box>
+            <Box component="section" sx={{
                 mb: 4
             }}>
                 <Typography variant="h4" sx={{
@@ -110,7 +151,7 @@ export default function Syntax() {
                     {get("syntaxpage.noun")}
                 </Typography>
                 <TableContainer component={Paper}>
-                    <Table aria-label="noun">
+                    <Table aria-label={get("syntaxpage.noun")}>
                         <TableHead>
                             <TableRow>
                                 <TableCell>{get("syntaxpage.case")}</TableCell>

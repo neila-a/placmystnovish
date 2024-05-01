@@ -1,10 +1,17 @@
 [
     [
-        "toadverb",
-        "-me"
+        "normal",
+        "mu",
+        "my"
     ],
     [
-        "adjective",
-        "-mi"
+        "compare",
+        "du",
+        "dy"
+    ],
+    [
+        "est",
+        "su",
+        "sy"
     ]
 ]

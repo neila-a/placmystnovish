@@ -13,10 +13,10 @@ import {
 import {
     get
 } from "react-intl-universal";
+import consonants from "./consonants.json";
 import letters from "./letters.json";
 import vowels from "./vowels.json";
-import consonants from "./consonants.json";
-export default function orthography() {
+export default function Orthography() {
     return (
         <Box sx={{
             p: 2
