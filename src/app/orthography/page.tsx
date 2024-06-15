@@ -100,6 +100,9 @@ export default function Orthography() {
                     </Table>
                 </TableContainer>
             </Box>)}
+            <Typography>
+                {get("orthographypage.e")}
+            </Typography>
         </Box>
     );
 }

@@ -45,7 +45,7 @@ export default function Dictionary() {
                     }}>
                         {get("dictionarypage.loanword.affix")}
                     </Typography>
-                    <Typography variant="body1">
+                    <Typography variant="body1" paragraph>
                         {get("dictionarypage.loanword.affixbody")}
                     </Typography>
                 </Box>

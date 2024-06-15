@@ -106,7 +106,7 @@ export default function Home() {
                                 <Typography variant="h5">
                                     {get(item[0])}
                                 </Typography>
-                                <Typography variant="subtitle1">
+                                <Typography variant="subtitle1" paragraph>
                                     {get(`${item[0]}page.description`)}
                                 </Typography>
                             </Grid>
@@ -128,7 +128,7 @@ export default function Home() {
                     <Typography sx={{
                         borderLeft: "4px solid gray",
                         pl: 1
-                    }} variant="h5" component="blockquote" cite="https://www.rechtschreibrat.com/">
+                    }} variant="h5" component="blockquote" cite="https://www.rechtschreibrat.com/" paragraph>
                         {get("homepage.say")}
                     </Typography>
                     <a href="mailto:neilaspace@outlook.com">
