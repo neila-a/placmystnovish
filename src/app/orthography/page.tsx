@@ -45,7 +45,7 @@ export default function Orthography() {
                                         border: 0
                                     }
                                 }}>
-                                    <TableCell component="th" scope="row">
+                                    <TableCell scope="row">
                                         {letter[0].toLocaleUpperCase()}
                                     </TableCell>
                                     <TableCell>
@@ -88,7 +88,7 @@ export default function Orthography() {
                                         border: 0
                                     }
                                 }}>
-                                    <TableCell component="th" scope="row">
+                                    <TableCell scope="row">
                                         {letter[0]}
                                     </TableCell>
                                     <TableCell align="right">
@@ -100,9 +100,57 @@ export default function Orthography() {
                     </Table>
                 </TableContainer>
             </Box>)}
-            <Typography>
-                {get("orthographypage.e")}
-            </Typography>
+            <Box component="section" sx={{
+                mb: 4
+            }}>
+                <Typography variant="h4" sx={{
+                    mb: 2
+                }}>
+                    {get("orthographypage.stress.title")}
+                </Typography>
+                <Typography variant="body1" sx={{
+                    mb: 2
+                }} paragraph>
+                    {get("orthographypage.stress.body")}
+                </Typography>
+            </Box>
+            <Box component="section" sx={{
+                mb: 4
+            }}>
+                <Typography variant="h4" sx={{
+                    mb: 2
+                }}>
+                    {get("orthographypage.accent.title")}
+                </Typography>
+                <Box sx={{
+                    p: 2
+                }}>
+                    <Typography variant="h5" sx={{
+                        mb: 2
+                    }}>
+                        {get("orthographypage.accent.question.title")}
+                    </Typography>
+                    <Typography variant="body1" sx={{
+                        mb: 2
+                    }} paragraph>
+                        {get("orthographypage.accent.question.body")}
+                    </Typography>
+                </Box>
+                <Box sx={{
+                    p: 2
+                }}>
+                    <Typography variant="h5" sx={{
+                        mb: 2
+                    }}>
+                        {get("orthographypage.accent.focus.title")}
+                    </Typography>
+                    <Typography variant="body1" sx={{
+                        mb: 2
+                    }} paragraph>
+                        {get("orthographypage.accent.focus.body")}
+                    </Typography>
+                </Box>
+            </Box>
         </Box>
     );
 }
