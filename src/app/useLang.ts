@@ -1,4 +1,3 @@
-"use client";
 import intl from 'react-intl-universal';
 import {
     useReducer
