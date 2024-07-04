@@ -1,4 +1,3 @@
-"use client";
 import {
     Box,
     Paper,
@@ -10,13 +9,14 @@ import {
     TableRow,
     Typography
 } from "@mui/material";
-import {
-    get
-} from "react-intl-universal";
-import consonants from "./consonants.json";
-import letters from "./letters.json";
-import vowels from "./vowels.json";
-export default function Orthography() {
+import getIntl, {
+    params
+} from "getIntl";
+import consonants from "orthography/consonants.json";
+import letters from "orthography/letters.json";
+import vowels from "orthography/vowels.json";
+export default async function Orthography(params: params) {
+    const get = await getIntl(params);
     return (
         <Box sx={{
             p: 2

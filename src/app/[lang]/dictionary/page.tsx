@@ -1,12 +1,12 @@
-"use client";
 import {
     Box,
     Typography
 } from "@mui/material";
-import {
-    get
-} from "react-intl-universal";
-export default function Dictionary() {
+import getIntl, {
+    params
+} from "getIntl";
+export default async function Dictionary(params: params) {
+    const get = await getIntl(params);
     return (
         <Box component="main" sx={{
             p: 2

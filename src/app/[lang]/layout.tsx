@@ -1,11 +1,18 @@
 import type {
     Metadata
 } from 'next';
-import ClientLayout from './ClientLayout';
 import {
     Box
 } from '@mui/material';
-import pack from "../../package.json";
+import pack from "../../../package.json";
+import HeadBar from "./layout/HeadBar";
+import Footer from "./layout/Footer";
+import {
+    params
+} from 'getIntl';
+import {
+    ReactNode
+} from 'react';
 export const metadata: Metadata = {
     title: 'Placmystnovish',
     description: 'Placmystnovish site',
@@ -25,17 +32,17 @@ export const metadata: Metadata = {
         locale: 'zh_CN'
     }
 };
-export default function RootLayout(props: {
-    children: React.ReactNode;
+export default async function RootLayout(props: params & {
+    children: ReactNode;
 }) {
     return (
         <html lang="zh-CN">
             <Box component="body" sx={{
                 margin: 0
             }}>
-                <ClientLayout>
-                    {props.children}
-                </ClientLayout>
+                <HeadBar {...props} />
+                {props.children}
+                <Footer {...props} />
             </Box>
         </html>
     )

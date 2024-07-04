@@ -1,4 +1,3 @@
-"use client";
 import {
     Box,
     Paper,
@@ -10,15 +9,18 @@ import {
     TableRow,
     Typography
 } from "@mui/material";
-import {
-    get,
-    getHTML
-} from "react-intl-universal";
-import adjectives from "./adjective.json";
-import nouns from "./noun.json";
-import numbers from "./number.json";
-import verbs from "./verb.json";
-export default function Syntax() {
+import getIntl, {
+    getIntlInstance,
+    params
+} from "getIntl";
+import adjectives from "syntax/adjective.json";
+import nouns from "syntax/noun.json";
+import numbers from "syntax/number.json";
+import verbs from "syntax/verb.json";
+export default async function Syntax(params: params) {
+    const get = await getIntl(params),
+        instance = await getIntlInstance(params),
+        getHTML = instance.getHTML.bind(instance);
     return (
         <Box sx={{
             p: 2
