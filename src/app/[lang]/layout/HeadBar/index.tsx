@@ -27,6 +27,8 @@ export default async function HeadBar(params: params) {
                 </Typography>
             </Box>
         </NameLinkContainer>
-        <HeadTab {...params} />
+        <Box>
+            <HeadTab {...params} />
+        </Box>
     </HeadBarContainer>;
 }

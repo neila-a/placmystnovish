@@ -23,5 +23,5 @@ export default async function Say(params: params) {
                 {get("email")}
             </Button>
         </a>
-    </SayContainer>
+    </SayContainer>;
 }

@@ -13,18 +13,18 @@ export default function HeadBarContainer(props: {
     return <AppBar position="sticky" sx={theme => ({
         backgroundColor: theme.palette.background.paper,
         color: theme.palette.primary.main,
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down("sm")]: {
             minHeight: 112
         }
-    })}>
+    })} component="nav">
         <Toolbar sx={theme => ({
             display: "flex",
             justifyContent: "space-between",
-            [theme.breakpoints.down('sm')]: {
+            [theme.breakpoints.down("sm")]: {
                 flexDirection: "column"
             }
         })}>
             {props.children}
         </Toolbar>
-    </AppBar>
+    </AppBar>;
 }

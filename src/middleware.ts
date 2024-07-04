@@ -16,20 +16,26 @@ export function middleware(request: NextRequest) {
         pathname
     } = request.nextUrl;
 
-    // Redirect if there is no locale
-    if (locales.some(
-        locale => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-    )) return;
+    if (
+        // Redirect if there is not internal
+        pathname.startsWith("/_next") || pathname.startsWith("/placmystnov.png")
+
+        // Redirect if there is no locale
+        || locales.some(
+            locale => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+        )
+    ) return;
 
     // 转换headers格式
-    const headers: Negotiator.Headers = {};
+    const headers: Negotiator.Headers = {
+    };
     for (const header of request.headers.entries()) {
         headers[header[0]] = header[1];
     }
 
     const languages = new Negotiator({
-        headers
-    }).languages(),
+            headers
+        }).languages(),
         locale = match(languages.map(lang => lang.replace("_", "-")), locales, defaultLocale);
     request.nextUrl.pathname = `/${locale}${pathname}`;
 
@@ -40,7 +46,8 @@ export function middleware(request: NextRequest) {
 export const config = {
     matcher: [
         // Skip all internal paths (_next)
-        '/((?!_next).*)',
+        // '/((?!_next).*)',
+        // "/((?!placmystnov.png).*)"
         // Optional: only run on root (/) URL
         // '/'
     ]

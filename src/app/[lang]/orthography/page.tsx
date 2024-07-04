@@ -39,23 +39,22 @@ export default async function Orthography(params: params) {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {(letters as [Lowercase<string>, string][]).map(letter => (
-                                <TableRow key={letter[0]} sx={{
-                                    '&:last-child td, &:last-child th': {
-                                        border: 0
-                                    }
-                                }}>
-                                    <TableCell scope="row">
-                                        {letter[0].toLocaleUpperCase()}
-                                    </TableCell>
-                                    <TableCell>
-                                        {letter[0]}
-                                    </TableCell>
-                                    <TableCell align="right">
-                                        {letter[1]}
-                                    </TableCell>
-                                </TableRow>
-                            ))}
+                            {(letters as [Lowercase<string>, string][]).map(letter => <TableRow key={letter[0]} sx={{
+                                "&:last-child td, &:last-child th": {
+                                    border: 0
+                                }
+                            }}>
+                                <TableCell scope="row">
+                                    {letter[0].toLocaleUpperCase()}
+                                </TableCell>
+                                <TableCell>
+                                    {letter[0]}
+                                </TableCell>
+                                <TableCell align="right">
+                                    {letter[1]}
+                                </TableCell>
+                            </TableRow>
+                            )}
                         </TableBody>
                     </Table>
                 </TableContainer>
@@ -82,20 +81,19 @@ export default async function Orthography(params: params) {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {item[1].map(letter => (
-                                <TableRow key={letter[0]} sx={{
-                                    '&:last-child td, &:last-child th': {
-                                        border: 0
-                                    }
-                                }}>
-                                    <TableCell scope="row">
-                                        {letter[0]}
-                                    </TableCell>
-                                    <TableCell align="right">
-                                        {letter[1]}
-                                    </TableCell>
-                                </TableRow>
-                            ))}
+                            {item[1].map(letter => <TableRow key={letter[0]} sx={{
+                                "&:last-child td, &:last-child th": {
+                                    border: 0
+                                }
+                            }}>
+                                <TableCell scope="row">
+                                    {letter[0]}
+                                </TableCell>
+                                <TableCell align="right">
+                                    {letter[1]}
+                                </TableCell>
+                            </TableRow>
+                            )}
                         </TableBody>
                     </Table>
                 </TableContainer>

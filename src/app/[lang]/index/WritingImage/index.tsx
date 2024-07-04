@@ -8,5 +8,5 @@ export default function WritingImage() {
             height: "calc((100vw - 32px) / 7360 * 4912)",
             zIndex: "1"
         }} src={writing} alt="writing" />
-    </WritingImageContainer>
+    </WritingImageContainer>;
 }

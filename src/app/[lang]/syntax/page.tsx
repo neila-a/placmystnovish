@@ -33,43 +33,41 @@ export default async function Syntax(params: params) {
             <Box sx={{
                 p: 2
             }}>
-                {([["number", numbers]] as [string, [string, string][]][]).map(item => (
-                    <Box component="section" sx={{
-                        mb: 4
-                    }} key={item[0]}>
-                        <Typography variant="h5" sx={{
-                            mb: 2
-                        }}>
-                            {get(`syntaxpage.${item[0]}`)}
-                        </Typography>
-                        <TableContainer component={Paper}>
-                            <Table aria-label={get(`syntaxpage.${item[0]}`)}>
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell>{get("syntaxpage.role")}</TableCell>
-                                        <TableCell align="right">{get("syntaxpage.suffix")}</TableCell>
-                                    </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    {item[1].map(word => (
-                                        <TableRow key={word[0]} sx={{
-                                            '&:last-child td, &:last-child th': {
-                                                border: 0
-                                            }
-                                        }}>
-                                            <TableCell scope="row">
-                                                {get(`syntaxpage.${word[0]}`)}
-                                            </TableCell>
-                                            <TableCell align="right">
-                                                {word[1]}
-                                            </TableCell>
-                                        </TableRow>
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        </TableContainer>
-                    </Box>
-                ))}
+                {([["number", numbers]] as [string, [string, string][]][]).map(item => <Box component="section" sx={{
+                    mb: 4
+                }} key={item[0]}>
+                    <Typography variant="h5" sx={{
+                        mb: 2
+                    }}>
+                        {get(`syntaxpage.${item[0]}`)}
+                    </Typography>
+                    <TableContainer component={Paper}>
+                        <Table aria-label={get(`syntaxpage.${item[0]}`)}>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>{get("syntaxpage.role")}</TableCell>
+                                    <TableCell align="right">{get("syntaxpage.suffix")}</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {item[1].map(word => <TableRow key={word[0]} sx={{
+                                    "&:last-child td, &:last-child th": {
+                                        border: 0
+                                    }
+                                }}>
+                                    <TableCell scope="row">
+                                        {get(`syntaxpage.${word[0]}`)}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        {word[1]}
+                                    </TableCell>
+                                </TableRow>
+                                )}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </Box>
+                )}
                 <Box component="section" sx={{
                     mb: 4
                 }}>
@@ -88,23 +86,22 @@ export default async function Syntax(params: params) {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {(verbs as [string, string, string][]).map(verb => (
-                                    <TableRow key={verb[0]} sx={{
-                                        '&:last-child td, &:last-child th': {
-                                            border: 0
-                                        }
-                                    }}>
-                                        <TableCell scope="row">
-                                            {get(`syntaxpage.${verb[0]}`)}
-                                        </TableCell>
-                                        <TableCell align="right">
-                                            {verb[1]}
-                                        </TableCell>
-                                        <TableCell align="right">
-                                            {verb[2]}
-                                        </TableCell>
-                                    </TableRow>
-                                ))}
+                                {(verbs as [string, string, string][]).map(verb => <TableRow key={verb[0]} sx={{
+                                    "&:last-child td, &:last-child th": {
+                                        border: 0
+                                    }
+                                }}>
+                                    <TableCell scope="row">
+                                        {get(`syntaxpage.${verb[0]}`)}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        {verb[1]}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        {verb[2]}
+                                    </TableCell>
+                                </TableRow>
+                                )}
                             </TableBody>
                         </Table>
                     </TableContainer>
@@ -127,23 +124,22 @@ export default async function Syntax(params: params) {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {(adjectives as [string, string, string][]).map(adjective => (
-                                    <TableRow key={adjective[0]} sx={{
-                                        '&:last-child td, &:last-child th': {
-                                            border: 0
-                                        }
-                                    }}>
-                                        <TableCell scope="row">
-                                            {get(`syntaxpage.adjectives.${adjective[0]}`)}
-                                        </TableCell>
-                                        <TableCell align="right">
-                                            {adjective[1]}
-                                        </TableCell>
-                                        <TableCell align="right">
-                                            {adjective[2]}
-                                        </TableCell>
-                                    </TableRow>
-                                ))}
+                                {(adjectives as [string, string, string][]).map(adjective => <TableRow key={adjective[0]} sx={{
+                                    "&:last-child td, &:last-child th": {
+                                        border: 0
+                                    }
+                                }}>
+                                    <TableCell scope="row">
+                                        {get(`syntaxpage.adjectives.${adjective[0]}`)}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        {adjective[1]}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        {adjective[2]}
+                                    </TableCell>
+                                </TableRow>
+                                )}
                             </TableBody>
                         </Table>
                     </TableContainer>
@@ -166,23 +162,22 @@ export default async function Syntax(params: params) {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {(nouns as [string, string, string][]).map(noun => (
-                                    <TableRow key={noun[0]} sx={{
-                                        '&:last-child td, &:last-child th': {
-                                            border: 0
-                                        }
-                                    }}>
-                                        <TableCell scope="row">
-                                            {get(`syntaxpage.${noun[0]}`)}
-                                        </TableCell>
-                                        <TableCell align="right">
-                                            {noun[1]}
-                                        </TableCell>
-                                        <TableCell align="right">
-                                            {noun[2]}
-                                        </TableCell>
-                                    </TableRow>
-                                ))}
+                                {(nouns as [string, string, string][]).map(noun => <TableRow key={noun[0]} sx={{
+                                    "&:last-child td, &:last-child th": {
+                                        border: 0
+                                    }
+                                }}>
+                                    <TableCell scope="row">
+                                        {get(`syntaxpage.${noun[0]}`)}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        {noun[1]}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        {noun[2]}
+                                    </TableCell>
+                                </TableRow>
+                                )}
                             </TableBody>
                         </Table>
                     </TableContainer>

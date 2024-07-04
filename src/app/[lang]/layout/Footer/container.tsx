@@ -5,7 +5,7 @@ import {
 import {
     ReactNode
 } from "react";
-export default async function FooterContainer(props: {
+export default function FooterContainer(props: {
     children: ReactNode;
 }) {
     return <Box component="footer" sx={{

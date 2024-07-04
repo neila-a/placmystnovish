@@ -11,7 +11,7 @@ export default function PagesGridContainer(props: {
     children: ReactNode;
 }) {
     const theme = useTheme(),
-        downsm = useMediaQuery(theme.breakpoints.down("sm"))
+        downsm = useMediaQuery(theme.breakpoints.down("sm"));
     return <Grid container component="section" direction={downsm ? "column" : "row"} sx={{
         justifyContent: "space-between"
     }}>

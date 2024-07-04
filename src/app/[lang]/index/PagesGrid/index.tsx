@@ -6,7 +6,7 @@ import {
     HistoryEdu as HistoryEduIcon,
     MenuBook as MenuBookIcon,
     Article as ArticleIcon
-} from '@mui/icons-material';
+} from "@mui/icons-material";
 import getGetter, {
     params
 } from "getIntl";
@@ -14,7 +14,7 @@ import IconContainer from "./iconContainer";
 import {
     page
 } from "../../layout/HeadBar";
-const pages = [["orthography", HistoryEduIcon], ["dictionary", MenuBookIcon], ["syntax", ArticleIcon]] satisfies [page, typeof HistoryEduIcon][]
+const pages = [["orthography", HistoryEduIcon], ["dictionary", MenuBookIcon], ["syntax", ArticleIcon]] satisfies [page, typeof HistoryEduIcon][];
 export default async function PagesGrid(params: params) {
     const get = await getGetter(params);
     return pages.map(item => {

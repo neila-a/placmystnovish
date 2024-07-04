@@ -23,7 +23,6 @@ export default function HeadTabContainer(props: {
         variant="fullWidth"
         value={value}
         onChange={(event, newValue: page) => {
-            debugger
             return props.redirect(pathname, newValue);
         }}
     >

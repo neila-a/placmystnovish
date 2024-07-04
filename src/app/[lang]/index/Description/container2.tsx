@@ -12,5 +12,5 @@ export default function DescriptionContainer2(props: {
         color: theme => theme.palette.primary.main
     }}>
         {props.children}
-    </Typography>
+    </Typography>;
 }
