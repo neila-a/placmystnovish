@@ -5,20 +5,20 @@ import {
     // @ts-ignore 导入被吃了
     ReactIntlUniversal
 } from "react-intl-universal";
+/**
+ * nextjs 官方的推荐做法，用于缩小体积
+ */
 async function importLang(lang: string) {
     const imported = await import(`locales/${lang}.json`);
     return imported.default as langContent;
 }
 export async function getIntlInstance(params: params) {
     "use server";
-    const instance = new ReactIntlUniversal() as typeof import("react-intl-universal"),
-        langsContents = {
-            "zh-CN": () => importLang("zh-CN")
-        } satisfies Record<lang, () => Promise<langContent>>; // nextjs 官方的推荐做法，用于缩小体积
+    const instance = new ReactIntlUniversal() as typeof import("react-intl-universal");
     instance.init({
         currentLocale: params.params.lang,
         locales: {
-            [params.params.lang]: await langsContents[params.params.lang]()
+            [params.params.lang]: await importLang(params.params.lang)
         }
     });
     return instance;
