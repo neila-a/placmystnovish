@@ -12,9 +12,9 @@ import {
 import getIntl, {
     params
 } from "getIntl";
-import consonants from "orthography/consonants.json";
-import letters from "orthography/letters.json";
-import vowels from "orthography/vowels.json";
+import consonants from "orthography/consonants.csv";
+import letters from "orthography/letters.csv";
+import vowels from "orthography/vowels.csv";
 export default async function Orthography(params: params) {
     const get = await getIntl(params);
     return (
@@ -39,7 +39,7 @@ export default async function Orthography(params: params) {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {(letters as [Lowercase<string>, string][]).map(letter => <TableRow key={letter[0]} sx={{
+                            {letters.map(letter => <TableRow key={letter[0]} sx={{
                                 "&:last-child td, &:last-child th": {
                                     border: 0
                                 }

@@ -13,10 +13,10 @@ import getIntl, {
     getIntlInstance,
     params
 } from "getIntl";
-import adjectives from "syntax/adjective.json";
-import nouns from "syntax/noun.json";
-import numbers from "syntax/number.json";
-import verbs from "syntax/verb.json";
+import adjectives from "syntax/adjective.csv";
+import nouns from "syntax/noun.csv";
+import numbers from "syntax/number.csv";
+import verbs from "syntax/verb.csv";
 export default async function Syntax(params: params) {
     const get = await getIntl(params),
         instance = await getIntlInstance(params),
@@ -33,16 +33,16 @@ export default async function Syntax(params: params) {
             <Box sx={{
                 p: 2
             }}>
-                {([["number", numbers]] as [string, [string, string][]][]).map(item => <Box component="section" sx={{
+                <Box component="section" sx={{
                     mb: 4
-                }} key={item[0]}>
+                }}>
                     <Typography variant="h5" sx={{
                         mb: 2
                     }}>
-                        {get(`syntaxpage.${item[0]}`)}
+                        {get("syntaxpage.number")}
                     </Typography>
                     <TableContainer component={Paper}>
-                        <Table aria-label={get(`syntaxpage.${item[0]}`)}>
+                        <Table aria-label={get("syntaxpage.number")}>
                             <TableHead>
                                 <TableRow>
                                     <TableCell>{get("syntaxpage.role")}</TableCell>
@@ -50,7 +50,7 @@ export default async function Syntax(params: params) {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {item[1].map(word => <TableRow key={word[0]} sx={{
+                                {numbers.map(word => <TableRow key={word[0]} sx={{
                                     "&:last-child td, &:last-child th": {
                                         border: 0
                                     }
@@ -67,7 +67,6 @@ export default async function Syntax(params: params) {
                         </Table>
                     </TableContainer>
                 </Box>
-                )}
                 <Box component="section" sx={{
                     mb: 4
                 }}>
@@ -86,7 +85,7 @@ export default async function Syntax(params: params) {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {(verbs as [string, string, string][]).map(verb => <TableRow key={verb[0]} sx={{
+                                {verbs.map(verb => <TableRow key={verb[0]} sx={{
                                     "&:last-child td, &:last-child th": {
                                         border: 0
                                     }
@@ -124,7 +123,7 @@ export default async function Syntax(params: params) {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {(adjectives as [string, string, string][]).map(adjective => <TableRow key={adjective[0]} sx={{
+                                {adjectives.map(adjective => <TableRow key={adjective[0]} sx={{
                                     "&:last-child td, &:last-child th": {
                                         border: 0
                                     }
@@ -162,7 +161,7 @@ export default async function Syntax(params: params) {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {(nouns as [string, string, string][]).map(noun => <TableRow key={noun[0]} sx={{
+                                {nouns.map(noun => <TableRow key={noun[0]} sx={{
                                     "&:last-child td, &:last-child th": {
                                         border: 0
                                     }
